@@ -63,6 +63,9 @@ public class TcxMerger {
   }
 
   public void merge(Path inputFolder, Path destinationFile) throws Exception {
+    if (Files.exists(destinationFile)) {
+      Files.delete(destinationFile);
+    }
     merge(inputFolder);
     if (mainDoc != null) {
       System.out.println("Saving: " + destinationFile);
