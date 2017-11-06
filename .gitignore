@@ -1,0 +1,11 @@
+# generated files
+bin/
+build/
+
+# Gradle cache files
+.gradle/
+
+# Eclipse project files
+.settings/
+.classpath
+.project

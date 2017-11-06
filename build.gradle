@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  testCompile (
+    'junit:junit:4.12',
+    'com.google.jimfs:jimfs:1.1',
+  )
+}
+
+task copyLibs(type: Copy) {
+  from configurations.compile
+  into file("${project.buildDir}/libs/")
+}
+
+build.dependsOn(copyLibs)
